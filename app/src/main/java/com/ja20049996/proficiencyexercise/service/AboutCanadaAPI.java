@@ -8,6 +8,7 @@ import retrofit2.http.GET;
 
 /**
  * This class represents the facts API, all endpoints can stay here.
+ *
  * @author ja20049996
  */
 public interface AboutCanadaAPI {

@@ -1,7 +1,6 @@
 package com.ja20049996.proficiencyexercise.view;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +16,11 @@ import java.util.List;
 public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
 
     private static final String TAG = "RowsAdapter";
-
     private List<RowItems> rowItemsList;
 
     public RowsAdapter(List<RowItems> rowItemsList) {
         this.rowItemsList = rowItemsList;
     }
-
 
     @Override
     public RowsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,23 +30,14 @@ public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(RowsAdapter.ViewHolder holder, int position) {
-
         RowItems rowItems = rowItemsList.get(position);
-
-        if(rowItems !=null){
-
+        if (rowItems != null) {
             holder.fact_title.setText(rowItems.getTitle());
             holder.fact_description.setText(rowItems.getDescription());
-
-
-            /*Glide.with(holder.fact_title.getContext())
-                    .load(rowItems.getImageHref())
-                    .into(holder.iv_image);*/
-
-            Log.i(TAG, "onBindViewHolder: URL "+ rowItems.getImageHref());
-
+            //Picsso is used to load Images
             Picasso.get()
                     .load(rowItems.getImageHref())
+                    .placeholder(R.drawable.loader)
                     .into(holder.iv_image);
         }
     }
@@ -60,16 +48,15 @@ public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private  TextView fact_title;
-        private  TextView fact_description;
+        private TextView fact_title;
+        private TextView fact_description;
         private ImageView iv_image;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-            fact_title = (TextView) itemView.findViewById(R.id.fact_title);
-            fact_description = (TextView) itemView.findViewById(R.id.fact_description);
-            iv_image = (ImageView) itemView.findViewById(R.id.fact_image);
+            fact_title = itemView.findViewById(R.id.fact_title);
+            fact_description = itemView.findViewById(R.id.fact_description);
+            iv_image = itemView.findViewById(R.id.fact_image);
 
         }
     }

@@ -10,6 +10,7 @@ import java.util.List;
  * @author ja20049996
  */
 public interface FactsView {
+    void factsData(String title, List<RowItems> countries);
 
-    void factsData(String title,List<RowItems> countries);
+    void showError(String error);
 }
