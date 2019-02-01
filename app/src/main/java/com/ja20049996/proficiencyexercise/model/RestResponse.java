@@ -10,14 +10,10 @@ import java.util.List;
 public class RestResponse implements Parcelable {
 
     public static final Creator<RestResponse> CREATOR = new Creator<RestResponse>() {
-
         @Override
-
         public RestResponse createFromParcel(Parcel source) {
-
             return new RestResponse(source);
         }
-
         @Override
         public RestResponse[] newArray(int size) {
             return new RestResponse[size];
@@ -43,7 +39,6 @@ public class RestResponse implements Parcelable {
         this.title = title;
 
     }
-
     public List<RowItems> getRows() {
         return rows;
     }
