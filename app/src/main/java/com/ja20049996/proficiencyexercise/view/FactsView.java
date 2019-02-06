@@ -11,8 +11,10 @@ import java.util.List;
  */
 public interface FactsView {
     void factsData(String title, List<RowItems> countries);
+    
     // showing error
     void showError(String error);
+    
     // when network fail
     void onFail(String error);
 }

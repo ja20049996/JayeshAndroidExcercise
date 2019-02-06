@@ -21,7 +21,6 @@ public class FactsService {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder().baseUrl(ServicesConstants.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         }
-        
-        return retrofit.create(AboutCanadaAPI.class);
+         return retrofit.create(AboutCanadaAPI.class);
     }
 }

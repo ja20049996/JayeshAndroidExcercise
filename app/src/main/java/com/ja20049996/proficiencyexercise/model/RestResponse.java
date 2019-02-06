@@ -43,7 +43,6 @@ public class RestResponse implements Parcelable {
         return rows;
     }
     
-    
     @NonNull
     @Override
     public String toString() {

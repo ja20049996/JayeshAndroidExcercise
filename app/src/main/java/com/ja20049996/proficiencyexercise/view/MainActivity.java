@@ -18,9 +18,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FactsView {
     
+    private final ArrayList<RowItems> listRows = new ArrayList<>();
     private ProgressBar progress;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private final ArrayList<RowItems> listRows = new ArrayList<>();
     private RowsAdapter adapter;
     private CanadaApiPresenter countryPresenter;
     
@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity implements FactsView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    
+        
         RecyclerView recyclerView = findViewById(R.id.card_recycler_view);
         progress = findViewById(R.id.progress);
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         recyclerView.setHasFixedSize(true);
-        countryPresenter = new CanadaApiPresenter(MainActivity.this,getApplicationContext());
-    
+        countryPresenter = new CanadaApiPresenter(MainActivity.this, getApplicationContext());
+        
         adapter = new RowsAdapter(listRows);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);

@@ -15,20 +15,20 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
-
+    
     private final List<RowItems> rowItemsList;
-
+    
     public RowsAdapter(List<RowItems> rowItemsList) {
         this.rowItemsList = rowItemsList;
     }
-
+    
     @NonNull
     @Override
     public RowsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_row, parent, false);
         return new ViewHolder(view);
     }
-
+    
     @Override
     public void onBindViewHolder(@NonNull RowsAdapter.ViewHolder holder, int position) {
         RowItems rowItems = rowItemsList.get(position);
@@ -42,23 +42,23 @@ public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
                     .into(holder.iv_image);
         }
     }
-
+    
     @Override
     public int getItemCount() {
         return rowItemsList.size();
     }
-
+    
     class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView fact_title;
         private final TextView fact_description;
         private final ImageView iv_image;
-
+        
         ViewHolder(View itemView) {
             super(itemView);
             fact_title = itemView.findViewById(R.id.fact_title);
             fact_description = itemView.findViewById(R.id.fact_description);
             iv_image = itemView.findViewById(R.id.fact_image);
-
+            
         }
     }
 }

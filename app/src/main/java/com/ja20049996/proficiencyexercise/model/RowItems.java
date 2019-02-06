@@ -19,11 +19,17 @@ public class RowItems implements Parcelable {
         }
     };
     
-    private String imageHref;
-    private String description;
-    private String title;
+    private final String imageHref;
+    private final String description;
+    private final String title;
     
-    private RowItems(Parcel in) {
+    public RowItems(String imageHref, String description, String title) {
+        this.imageHref = imageHref;
+        this.description = description;
+        this.title = title;
+    }
+    
+    public RowItems(Parcel in) {
         this.imageHref = in.readString();
         this.description = in.readString();
         this.title = in.readString();

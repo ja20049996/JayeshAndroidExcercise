@@ -49,13 +49,12 @@ public class CanadaApiPresenter {
                         if (data != null && data.getRows() != null && data.getRows().size() > 0) {
                             List<RowItems> result = data.getRows();
                             List<RowItems> filteredResult = new ArrayList<>();
-    
+                            
                             for (int i = 0; i < result.size(); i++) {
                                 if (!TextUtils.isEmpty(result.get(i).getDescription())) {
                                     filteredResult.add(result.get(i));
                                 }
                             }
-                            
                             factView.factsData(data.getTitle(), filteredResult);
                         } else {
                             factView.showError(mContex.getResources().getString(R.string.err_no_data));
