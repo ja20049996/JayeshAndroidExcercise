@@ -1,5 +1,6 @@
 package com.ja20049996.proficiencyexercise.view;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,21 +16,21 @@ import java.util.List;
 
 public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
 
-    private static final String TAG = "RowsAdapter";
-    private List<RowItems> rowItemsList;
+    private final List<RowItems> rowItemsList;
 
     public RowsAdapter(List<RowItems> rowItemsList) {
         this.rowItemsList = rowItemsList;
     }
 
+    @NonNull
     @Override
-    public RowsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RowsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RowsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RowsAdapter.ViewHolder holder, int position) {
         RowItems rowItems = rowItemsList.get(position);
         if (rowItems != null) {
             holder.fact_title.setText(rowItems.getTitle());
@@ -47,12 +48,12 @@ public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
         return rowItemsList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView fact_title;
-        private TextView fact_description;
-        private ImageView iv_image;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView fact_title;
+        private final TextView fact_description;
+        private final ImageView iv_image;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             fact_title = itemView.findViewById(R.id.fact_title);
             fact_description = itemView.findViewById(R.id.fact_description);

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidProficiency Exercise</string>
+
+    <string name="err_no_data">No data Available</string>
+    <string name="err_server">"Server Error"</string>
+
 </resources>

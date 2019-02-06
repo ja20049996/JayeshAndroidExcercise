@@ -12,7 +12,7 @@ import retrofit2.http.GET;
  * @author ja20049996
  */
 public interface AboutCanadaAPI {
-
+    
     @GET("facts.json")
     Call<RestResponse> getResults();
 }

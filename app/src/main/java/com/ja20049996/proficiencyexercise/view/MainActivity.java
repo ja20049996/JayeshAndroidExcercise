@@ -17,31 +17,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FactsView {
-
-    private RecyclerView recyclerView;
+    
     private ProgressBar progress;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private ArrayList<RowItems> listRows = new ArrayList<>();
+    private final ArrayList<RowItems> listRows = new ArrayList<>();
     private RowsAdapter adapter;
     private CanadaApiPresenter countryPresenter;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        recyclerView = findViewById(R.id.card_recycler_view);
+    
+        RecyclerView recyclerView = findViewById(R.id.card_recycler_view);
         progress = findViewById(R.id.progress);
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         recyclerView.setHasFixedSize(true);
-        countryPresenter = new CanadaApiPresenter(MainActivity.this);
-
-        /**
-         * setting adapter to the recyclerview
-         */
+        countryPresenter = new CanadaApiPresenter(MainActivity.this,getApplicationContext());
+    
         adapter = new RowsAdapter(listRows);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
-
+        
         // Maybe it's best to call it on onResume()
         progress.setVisibility(View.VISIBLE);
         countryPresenter.getData();
@@ -57,26 +54,30 @@ public class MainActivity extends AppCompatActivity implements FactsView {
             }
         });
     }
-
+    
     @Override
     public void showError(String err) {
         progress.setVisibility(View.GONE);
-        Toast.makeText(this, "Problem in loading data!", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this, err, Toast.LENGTH_SHORT).show();
     }
-
+    
+    @Override
+    public void onFail(String error) {
+        progress.setVisibility(View.GONE);
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+    }
+    
     @Override
     public void factsData(String title, List<RowItems> rows) {
         progress.setVisibility(View.GONE);
         setTitle(title);
-
+        
         swipeRefreshLayout.setRefreshing(false);
-
+        
         if (rows != null && rows.size() > 0) {
             listRows.clear();
             listRows.addAll(rows);
             adapter.notifyDataSetChanged();
         }
     }
-
 }

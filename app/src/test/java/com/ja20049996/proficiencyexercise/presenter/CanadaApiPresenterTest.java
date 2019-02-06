@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class CanadaApiPresenterTest {
 
     @Test
-    public void getData() throws Exception {
+    public void getData()  {
         {
             assertEquals(4, 2 + 2);
         }
