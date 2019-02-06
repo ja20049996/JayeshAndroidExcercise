@@ -8,4 +8,50 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+   <!-- progress bar-->
+
+    <style name="progress_bar">
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_8dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_8dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen_228dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_8dp</item>
+        <item name="android:layout_width">@dimen/dimen_50dp</item>
+        <item name="android:layout_height">@dimen/dimen_50dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+   <!-- match parent-->
+    <style name="match_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--recycler_view-->
+    <style name="card_recycler_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/recyclerBg</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
+    <!--view_card_row-->
+    <style name="card_view_card_row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_5dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen_5dp</item>
+        <item name="android:layout_marginRight">@dimen/dimen_5dp</item>
+        <item name="android:background">@drawable/border_card</item>
+    </style>
+
+    <style name="fact_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/margin_10</item>
+        <item name="android:layout_marginTop">@dimen/margin_10</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
 </resources>

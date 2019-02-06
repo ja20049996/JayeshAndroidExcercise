@@ -10,7 +10,23 @@
     <dimen name="dimen_100dp">100dp</dimen>
     <dimen name="dimen_228dp">228dp</dimen>
 
+    <!--margin-->
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="margin_100">100dp</dimen>
+    <dimen name="margin_228">228dp</dimen>
+
     <!--textSIze-->
-    <dimen name="dimen_18sp">18sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+
+    <!--Padding-->
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_12">12dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_5">5dp</dimen>
+
 
 </resources>
