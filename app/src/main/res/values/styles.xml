@@ -8,27 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-   <!-- progress bar-->
-
-    <style name="progress_bar">
-        <item name="android:textSize">18dp</item>
-        <item name="android:layout_marginLeft">@dimen/dimen_8dp</item>
-        <item name="android:layout_marginRight">@dimen/dimen_8dp</item>
-        <item name="android:layout_marginTop">@dimen/dimen_228dp</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_8dp</item>
-        <item name="android:layout_width">@dimen/dimen_50dp</item>
-        <item name="android:layout_height">@dimen/dimen_50dp</item>
+    <!-- progress bar-->
+    <style name="style_progress_bar">
+        <item name="android:layout_width">@dimen/width_50</item>
+        <item name="android:layout_height">@dimen/height_50</item>
+        <item name="android:layout_marginStart">@dimen/margin_8</item>
+        <item name="android:layout_marginLeft">@dimen/margin_8</item>
+        <item name="android:layout_marginTop">@dimen/margin_228</item>
+        <item name="android:layout_marginEnd">@dimen/margin_8</item>
+        <item name="android:layout_marginRight">@dimen/margin_12</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8</item>
         <item name="android:visibility">gone</item>
     </style>
 
-   <!-- match parent-->
-    <style name="match_parent">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-    </style>
-
     <!--recycler_view-->
-    <style name="card_recycler_view">
+    <style name="style_card_recycler_view">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/recyclerBg</item>
@@ -36,22 +30,61 @@
     </style>
 
     <!--view_card_row-->
-    <style name="card_view_card_row">
+
+    <!--CardView-->
+    <style name="style_card_view">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginLeft">@dimen/dimen_5dp</item>
-        <item name="android:layout_marginTop">@dimen/dimen_5dp</item>
-        <item name="android:layout_marginRight">@dimen/dimen_5dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/margin_5</item>
+        <item name="android:layout_marginTop">@dimen/margin_5</item>
+        <item name="android:layout_marginRight">@dimen/margin_5</item>
         <item name="android:background">@drawable/border_card</item>
     </style>
 
-    <style name="fact_title">
+    <!--Facts Title-->
+    <style name="style_fact_title" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">@dimen/margin_10</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5</item>
         <item name="android:layout_marginTop">@dimen/margin_10</item>
         <item name="android:textSize">@dimen/text_size_18</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <!--Linear layout description-->
+    <style name="style_linear_description">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_10</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">10</item>
+    </style>
+
+    <!--Linear layout image and Text view horizontal-->
+    <style name="style_linear_row_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_10</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--Text view description-->
+    <style name="style_fact_description">
+        <item name="android:layout_width">@dimen/width_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">@dimen/layout_weight</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--Image view in description-->
+    <style name="style_fact_image">
+        <item name="android:layout_width">@dimen/width_0</item>
+        <item name="android:layout_height">@dimen/height_70</item>
+        <item name="android:layout_weight">@dimen/layout_weight_image</item>
+        <item name="android:contentDescription">@string/app_name</item>
+        <item name="android:src">@drawable/ic_launcher_foreground</item>
     </style>
 
 </resources>

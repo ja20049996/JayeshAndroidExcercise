@@ -10,29 +10,18 @@
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="@dimen/dimen_16dp"
-        tools:layout_editor_absoluteY="@dimen/dimen_0dp">
+        tools:layout_editor_absoluteX="@dimen/absoluteX_16"
+        tools:layout_editor_absoluteY="@dimen/absoluteY_0">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/card_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/recyclerBg"
-            android:scrollbars="vertical" />
+            style="@style/style_card_recycler_view" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <ProgressBar
         android:id="@+id/progress"
-        android:layout_width="@dimen/dimen_50dp"
-        android:layout_height="@dimen/dimen_50dp"
-        android:layout_marginStart="@dimen/dimen_8dp"
-        android:layout_marginLeft="@dimen/dimen_8dp"
-        android:layout_marginTop="@dimen/dimen_228dp"
-        android:layout_marginEnd="@dimen/dimen_8dp"
-        android:layout_marginRight="@dimen/dimen_8dp"
-        android:layout_marginBottom="@dimen/dimen_8dp"
-        android:visibility="gone"
+        style="@style/style_progress_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"

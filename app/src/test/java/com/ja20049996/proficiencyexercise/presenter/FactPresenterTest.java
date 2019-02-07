@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by JA20049996 on 1/31/2019.
  */
-public class CanadaApiPresenterTest {
+public class FactPresenterTest {
     
     private final List<RowItems> NONEMPTY_ROWITEMS = new ArrayList<>();
     private final List<RowItems> EMPTY_ROWITEMS = new ArrayList<>();

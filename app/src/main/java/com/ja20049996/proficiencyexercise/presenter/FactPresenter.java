@@ -21,13 +21,13 @@ import retrofit2.Response;
  *
  * @author ja20049996
  */
-public class CanadaApiPresenter {
+public class FactPresenter {
     
     private final FactsView factView;
     private final Context mContex;
     private FactsService mFactService;
     
-    public CanadaApiPresenter(FactsView view, Context contex) {
+    public FactPresenter(FactsView view, Context contex) {
         this.factView = view;
         this.mContex = contex;
         

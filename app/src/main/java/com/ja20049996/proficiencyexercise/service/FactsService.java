@@ -1,5 +1,8 @@
 package com.ja20049996.proficiencyexercise.service;
 
+
+import com.ja20049996.proficiencyexercise.utils.Constants;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -16,11 +19,11 @@ public class FactsService {
      *
      * @return The API interface
      */
-    public AboutCanadaAPI getAPI() {
+    public FactApiInterface getAPI() {
         
         if (retrofit == null) {
-            retrofit = new Retrofit.Builder().baseUrl(ServicesConstants.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+            retrofit = new Retrofit.Builder().baseUrl(Constants.UrlConstants.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         }
-         return retrofit.create(AboutCanadaAPI.class);
+         return retrofit.create(FactApiInterface.class);
     }
 }

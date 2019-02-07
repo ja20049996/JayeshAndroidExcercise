@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 import com.ja20049996.proficiencyexercise.R;
 import com.ja20049996.proficiencyexercise.model.RowItems;
-import com.ja20049996.proficiencyexercise.presenter.CanadaApiPresenter;
+import com.ja20049996.proficiencyexercise.presenter.FactPresenter;
+import com.ja20049996.proficiencyexercise.view.adapter.FactAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity implements FactsView {
     private final ArrayList<RowItems> listRows = new ArrayList<>();
     private ProgressBar progress;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private RowsAdapter adapter;
-    private CanadaApiPresenter countryPresenter;
+    private FactAdapter adapter;
+    private FactPresenter countryPresenter;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements FactsView {
         progress = findViewById(R.id.progress);
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         recyclerView.setHasFixedSize(true);
-        countryPresenter = new CanadaApiPresenter(MainActivity.this, getApplicationContext());
+        countryPresenter = new FactPresenter(MainActivity.this, getApplicationContext());
         
-        adapter = new RowsAdapter(listRows);
+        adapter = new FactAdapter(listRows);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
         

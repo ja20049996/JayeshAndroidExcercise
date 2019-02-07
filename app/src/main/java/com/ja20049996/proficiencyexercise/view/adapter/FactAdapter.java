@@ -1,4 +1,4 @@
-package com.ja20049996.proficiencyexercise.view;
+package com.ja20049996.proficiencyexercise.view.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -14,23 +14,23 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RowsAdapter extends RecyclerView.Adapter<RowsAdapter.ViewHolder> {
+public class FactAdapter extends RecyclerView.Adapter<FactAdapter.ViewHolder> {
     
     private final List<RowItems> rowItemsList;
     
-    public RowsAdapter(List<RowItems> rowItemsList) {
+    public FactAdapter(List<RowItems> rowItemsList) {
         this.rowItemsList = rowItemsList;
     }
     
     @NonNull
     @Override
-    public RowsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FactAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_row, parent, false);
         return new ViewHolder(view);
     }
     
     @Override
-    public void onBindViewHolder(@NonNull RowsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FactAdapter.ViewHolder holder, int position) {
         RowItems rowItems = rowItemsList.get(position);
         if (rowItems != null) {
             holder.fact_title.setText(rowItems.getTitle());
