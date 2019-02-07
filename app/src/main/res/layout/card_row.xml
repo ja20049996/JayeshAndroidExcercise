@@ -8,14 +8,7 @@
 
         <TextView
             android:id="@+id/fact_title"
-            style="@style/style_fact_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_5"
-            android:layout_marginTop="@dimen/margin_10"
-            android:textSize="@dimen/text_size_18"
-            android:textStyle="bold"
-            android:textColor="@color/blue" />
+            style="@style/style_fact_title"/>
 
         <LinearLayout style="@style/style_linear_description">
 
@@ -26,7 +19,7 @@
             <ImageView
                 android:id="@+id/fact_image"
                 style="@style/style_fact_image"
-                android:contentDescription="@string/app_name" />
+                android:contentDescription="TODO" />
 
         </LinearLayout>
 
